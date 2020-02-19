@@ -1,0 +1,33 @@
+Modules:
+Setup (DOM related)
+Todo Factory
+DOM Controller (contains render function)
+DOM Mediator
+Project Factory
+Project Controller (controls projects which control todos)
+Saving Controller
+Saving Mediator
+
+JS Files:
+index.js (for importing and calling the mediator modules)
+DOM.js (will hold the DOM class - relating to anything dom related including setup)
+Todo.js (Will hold the Todo class)
+Project.js (will hold the project class)
+Data.js (will hold the data class which controls the projects and data they hold)
+Storage.js (will hold the saving and loading classes)
+DOMMediator.js (will mediate the requests from modules to the DOM.js module)
+StorageMediator.js (will mediate the requests from modules to the Storage.js module)
+DataMediator.js (will mediat the requests from modules to the Data.js module)
+
+See Images for structure and visuals.
+
+Order of writing:
+DOM.js
+DOMMediator.js
+index.js
+Todo.js
+Project.js
+Data.js
+DataMeidator.js
+Storage.js
+StorageMediator.js
