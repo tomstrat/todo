@@ -1,1 +1,4 @@
-document.write("It Works!");
+import DOM from "./DOM.js";
+
+
+DOM.Init();
