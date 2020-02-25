@@ -56,3 +56,62 @@ html, body{
     width: calc(100% - 400px);;
     height: 900px;
 }
+/*Create Todo Container */
+#createTodoContainer{
+    display:flex;
+    width:80%;
+    margin: 40px auto;
+}
+#todoBarContainer{
+    width:85%;
+    background-color: rgb(75, 75, 75);
+    border-radius: 30px;
+    display: flex;
+}
+#todoBarContainer input{
+    min-width: 50%;
+    flex-grow:1;
+    background-color: rgb(75, 75, 75);
+    border:none;
+    text-indent: 10px;
+    color: white;
+    font-size: 24px;
+    border-radius: 30px 0px 0px 30px;
+    border: 1px solid black;
+}
+#todoBarContainer input:focus{
+    outline:none;
+}
+#todoDate{
+    width: 15%;
+}
+#todoPriority{
+    width: 60px;
+}
+#todoProject{
+    width: 60px;
+    border-radius: 0px 30px 30px 0px;
+}
+#todoBarContainer span{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    color: white;
+    font-size:20px;
+    border: 1px solid black;
+}
+#todoSubmitContainer{
+    width: 15%;
+    text-align: center;
+    margin-left: 10px;
+}
+#todoSubmitContainer span{
+    background-color: blueviolet;
+    border: 1px solid black;
+    padding: 10px;
+    width: 100%;
+    border-radius: 30px;
+    display: block;
+    color: white;
+    font-size: 24px;
+}
