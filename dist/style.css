@@ -85,8 +85,48 @@ html, body{
 #todoDate{
     width: 15%;
 }
+/* TODO PRIORITY */
 #todoPriority{
     width: 60px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    color: white;
+    font-size:20px;
+    border: 1px solid black;
+    background-color: rgb(75, 75, 75);
+}
+#todoPriority:focus #priorityList{
+    display: flex;
+}
+#todoPriority:focus{
+    outline:none;
+}
+#priorityChoice{
+
+}
+#todoPriority ul{
+    position:absolute;
+    width: 100%;
+    top: 28px;
+    padding: 0px;
+    display: none;
+    flex-direction: column;
+    border: 2px solid black;
+}
+#todoPriority ul li{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    list-style-type: none;
+    background-color: rgb(75, 75, 75);
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 50px;
+}
+#todoPriority ul li:hover{
+    background-color: rgb(90,90,90);
 }
 #todoProject{
     width: 60px;

@@ -40,12 +40,32 @@ const DOM = (() => {
         const todoSubmitContainer = document.createElement("div");
         todoSubmitContainer.id = "todoSubmitContainer";
         const todoInput = document.createElement("input");
+        todoInput.id = "todoInput";
         todoInput.type = "text";
         const todoDate = document.createElement("span");
         todoDate.id = "todoDate";
         todoDate.innerHTML = "Date"
-        const todoPriority = document.createElement("span");
+        //priority select
+        const todoPriority = document.createElement("div");
         todoPriority.id = "todoPriority";
+        todoPriority.tabIndex = "1";
+        const priorityChoice = document.createElement("div");
+        priorityChoice.id = "priorityChoice";
+        priorityChoice.innerHTML = "B";
+        const priorityList = document.createElement("ul");
+        priorityList.id = "priorityList";
+        const priorityBlue = document.createElement("li");
+        priorityBlue.innerHTML = "B";
+        const priorityAmber = document.createElement("li");
+        priorityAmber.innerHTML = "A";
+        const priorityRed = document.createElement("li");
+        priorityRed.innerHTML = "R";
+        priorityList.appendChild(priorityBlue);
+        priorityList.appendChild(priorityAmber);
+        priorityList.appendChild(priorityRed);
+        todoPriority.appendChild(priorityChoice);
+        todoPriority.appendChild(priorityList);
+
         const todoProject = document.createElement("span");
         todoProject.id = "todoProject";
         const todoSubmit = document.createElement("span");
