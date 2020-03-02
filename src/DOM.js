@@ -60,6 +60,7 @@ const DOM = (() => {
         const priorityChoiceI = document.createElement("i");
         priorityChoice.id = "priorityChoice";
         priorityChoiceI.classList = "fas fa-exclamation-triangle";
+        priorityChoice.dataset.priority = "none";
         priorityChoice.appendChild(priorityChoiceI);
         //Priority Types
         const priorityList = document.createElement("ul");
@@ -67,22 +68,28 @@ const DOM = (() => {
         //Priority Blue
         const priorityBlue = document.createElement("li");
         const priorityBlueI = document.createElement("i");
-        priorityBlueI.innerHTML = "B";
+        priorityBlueI.classList = "fas fa-exclamation-triangle";
+        priorityBlueI.style.color = "#3492eb";
         priorityBlue.classList += " priorityTab";
+        priorityBlue.dataset.priority = "blue";
         priorityBlue.appendChild(priorityBlueI);
         priorityList.appendChild(priorityBlue);
         //Priority Amber
         const priorityAmber = document.createElement("li");
         const priorityAmberI = document.createElement("i");
-        priorityAmberI.innerHTML = "A";
+        priorityAmberI.classList = "fas fa-exclamation-triangle";
+        priorityAmberI.style.color = "#eb8f34";
         priorityAmber.classList += " priorityTab";
+        priorityAmber.dataset.priority = "amber";
         priorityAmber.appendChild(priorityAmberI);
         priorityList.appendChild(priorityAmber);
         //Priority Red
         const priorityRed = document.createElement("li");
         const priorityRedI = document.createElement("i");
-        priorityRedI.innerHTML = "R";
+        priorityRedI.classList = "fas fa-exclamation-triangle";
+        priorityRedI.style.color = "#e85346";
         priorityRed.classList += " priorityTab";
+        priorityRed.dataset.priority = "red";
         priorityRed.appendChild(priorityRedI);
         priorityList.appendChild(priorityRed);
 
@@ -124,10 +131,14 @@ const DOM = (() => {
 
         //Priority Tabs
         const priorityTabs = document.querySelectorAll(".priorityTab");
-        const priorityBox = document.getElementById("#priority");
+        const priorityBox = document.getElementById("priorityChoice");
         priorityTabs.forEach(tab => {
             tab.addEventListener("click", (e) => {
-                
+                priorityBox.dataset.priority = e.currentTarget.dataset.priority;
+                priorityBox.firstChild.style.color = e.currentTarget.firstChild.style.color;
+                console.log(document.activeElement);
+                window.focus();
+                console.log(document.activeElement);
             });
         });
     };
