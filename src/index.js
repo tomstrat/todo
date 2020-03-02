@@ -1,4 +1,5 @@
 import DOM from "./DOM.js";
 
 
-DOM.Init();
+DOM.InitDom();
+DOM.InitEvent();

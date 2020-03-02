@@ -1,7 +1,7 @@
 //Initial setup of the webpage
 const DOM = (() => {
 
-    const Init = () => {
+    const InitDom = () => {
         const body = document.querySelector("body");
 
         //Main Containers
@@ -97,7 +97,10 @@ const DOM = (() => {
 
         console.log("Init complete");
     };
-    return {Init};
+    const InitEvent = () => {
+
+    }
+    return {InitDom, InitEvent};
 })();
 
 export default DOM;
