@@ -1,3 +1,9 @@
+//Importing Font awesome
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/solid'
+import '@fortawesome/fontawesome-free/js/regular'
+import '@fortawesome/fontawesome-free/js/brands'
+
 //Initial setup of the webpage
 const DOM = (() => {
 
@@ -49,20 +55,37 @@ const DOM = (() => {
         const todoPriority = document.createElement("div");
         todoPriority.id = "todoPriority";
         todoPriority.tabIndex = "1";
+        //Priority Holder
         const priorityChoice = document.createElement("div");
+        const priorityChoiceI = document.createElement("i");
         priorityChoice.id = "priorityChoice";
-        priorityChoice.innerHTML = "B";
+        priorityChoiceI.classList = "fas fa-exclamation-triangle";
+        priorityChoice.appendChild(priorityChoiceI);
+        //Priority Types
         const priorityList = document.createElement("ul");
         priorityList.id = "priorityList";
+        //Priority Blue
         const priorityBlue = document.createElement("li");
-        priorityBlue.innerHTML = "B";
-        const priorityAmber = document.createElement("li");
-        priorityAmber.innerHTML = "A";
-        const priorityRed = document.createElement("li");
-        priorityRed.innerHTML = "R";
+        const priorityBlueI = document.createElement("i");
+        priorityBlueI.innerHTML = "B";
+        priorityBlue.classList += " priorityTab";
+        priorityBlue.appendChild(priorityBlueI);
         priorityList.appendChild(priorityBlue);
+        //Priority Amber
+        const priorityAmber = document.createElement("li");
+        const priorityAmberI = document.createElement("i");
+        priorityAmberI.innerHTML = "A";
+        priorityAmber.classList += " priorityTab";
+        priorityAmber.appendChild(priorityAmberI);
         priorityList.appendChild(priorityAmber);
+        //Priority Red
+        const priorityRed = document.createElement("li");
+        const priorityRedI = document.createElement("i");
+        priorityRedI.innerHTML = "R";
+        priorityRed.classList += " priorityTab";
+        priorityRed.appendChild(priorityRedI);
         priorityList.appendChild(priorityRed);
+
         todoPriority.appendChild(priorityChoice);
         todoPriority.appendChild(priorityList);
 
@@ -99,7 +122,15 @@ const DOM = (() => {
     };
     const InitEvent = () => {
 
-    }
+        //Priority Tabs
+        const priorityTabs = document.querySelectorAll(".priorityTab");
+        const priorityBox = document.getElementById("#priority");
+        priorityTabs.forEach(tab => {
+            tab.addEventListener("click", (e) => {
+                
+            });
+        });
+    };
     return {InitDom, InitEvent};
 })();
 
