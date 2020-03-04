@@ -65,6 +65,7 @@ const DOM = (() => {
         //Priority Types
         const priorityList = document.createElement("ul");
         priorityList.id = "priorityList";
+        priorityList.style.display = "none";
         //Priority Blue
         const priorityBlue = document.createElement("li");
         const priorityBlueI = document.createElement("i");
@@ -132,14 +133,16 @@ const DOM = (() => {
         //Priority Tabs
         const priorityTabs = document.querySelectorAll(".priorityTab");
         const priorityBox = document.getElementById("priorityChoice");
+        const priorityList = document.getElementById("priorityList");
         priorityTabs.forEach(tab => {
             tab.addEventListener("click", (e) => {
                 priorityBox.dataset.priority = e.currentTarget.dataset.priority;
                 priorityBox.firstChild.style.color = e.currentTarget.firstChild.style.color;
-                console.log(document.activeElement);
-                window.focus();
-                console.log(document.activeElement);
             });
+        });
+        const todoPriority = document.getElementById("todoPriority");
+        todoPriority.addEventListener("click", (e) => {
+            priorityList.style.display = priorityList.style.display == "none" ? "flex" : "none";
         });
     };
     return {InitDom, InitEvent};
