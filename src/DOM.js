@@ -16,9 +16,11 @@ const DOM = (() => {
         const topTitle = document.createElement("span");
         topTitle.id = "topTitle";
         topTitle.innerHTML = "ToDoToDayToMorrow";
-        const burgerMenu = document.createElement("i");
+        const burgerMenu = document.createElement("div");
         burgerMenu.id = "burgerMenu";
-        burgerMenu.classList = "fas fa-bars";
+        const burgerMenuIcon = document.createElement("i");
+        burgerMenuIcon.id = "burgerMenuIcon";
+        burgerMenuIcon.classList = "fas fa-bars";
         const dataContainer = document.createElement("div");
         dataContainer.id = "dataContainer";
         const projectContainer = document.createElement("div");
@@ -124,6 +126,7 @@ const DOM = (() => {
         dataContainer.appendChild(projectContainer);
         dataContainer.appendChild(todoContainer);
 
+        burgerMenu.appendChild(burgerMenuIcon);
         topBar.appendChild(burgerMenu);
         topBar.appendChild(topTitle);
 
@@ -149,6 +152,29 @@ const DOM = (() => {
         const todoPriority = document.getElementById("todoPriority");
         todoPriority.addEventListener("click", (e) => {
             priorityList.style.display = priorityList.style.display == "none" ? "flex" : "none";
+        });
+
+        //Burger Menu (mobile function)
+        const burgerMenu = document.getElementById("burgerMenu");
+        const projectContainer = document.getElementById("projectContainer");
+        burgerMenu.addEventListener("click", (e) => {
+
+            if(getComputedStyle(projectContainer).width == "0px"){
+                projectContainer.style.width = "400px";
+                burgerMenu.style.transform = "rotate(90deg)";
+            } else {
+                projectContainer.style.width = "0px";
+                burgerMenu.style.transform = "rotate(0deg)";
+            }
+            
+        });
+        //resize fix if burger is stuck at 0
+        window.addEventListener("resize", (e) => {
+            if (window.innerWidth > 1200){
+                projectContainer.style.width = "400px";
+            } else if (window.innerWidth < 1200){
+                projectContainer.style.width = "0px";
+            }
         });
     };
     return {InitDom, InitEvent};
