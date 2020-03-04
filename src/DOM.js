@@ -1,8 +1,6 @@
 //Importing Font awesome
 import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/solid'
-import '@fortawesome/fontawesome-free/js/regular'
-import '@fortawesome/fontawesome-free/js/brands'
 
 //Initial setup of the webpage
 const DOM = (() => {
@@ -15,7 +13,12 @@ const DOM = (() => {
         mainContainer.id = "mainContainer";
         const topBar = document.createElement("div");
         topBar.id = "topBar";
-        topBar.innerHTML = "ToDoToDayToMorrow";
+        const topTitle = document.createElement("span");
+        topTitle.id = "topTitle";
+        topTitle.innerHTML = "ToDoToDayToMorrow";
+        const burgerMenu = document.createElement("i");
+        burgerMenu.id = "burgerMenu";
+        burgerMenu.classList = "fas fa-bars";
         const dataContainer = document.createElement("div");
         dataContainer.id = "dataContainer";
         const projectContainer = document.createElement("div");
@@ -120,6 +123,9 @@ const DOM = (() => {
 
         dataContainer.appendChild(projectContainer);
         dataContainer.appendChild(todoContainer);
+
+        topBar.appendChild(burgerMenu);
+        topBar.appendChild(topTitle);
 
         mainContainer.appendChild(topBar);
         mainContainer.appendChild(dataContainer);
